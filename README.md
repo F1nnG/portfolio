@@ -37,7 +37,6 @@ npm run build
 ```
 /
 ├── public/
-│   └── assets/
 ├── src/
 │   ├── components/
 │   ├── layouts/
