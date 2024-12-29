@@ -1,0 +1,25 @@
+---
+
+const links = [
+	{
+		name: 'finn.groenewoud@gmail.com',
+		url: 'mailto:finn.groenewoud@gmail.com',
+	},
+	{
+		name: 'LinkedIn',
+		url: 'https://www.linkedin.com/in/finn-groenewoud/',
+	},
+];
+
+---
+
+<section class="mb-20">
+	<h2 class="text-3xl font-semibold mb-8 text-center">Let's Connect</h2>
+	<div class="flex flex-col items-center space-y-4">
+		{links.map((link) => (
+			<a href={ link.url } class="group px-8 py-3 rounded-full bg-primary/10 hover:bg-primary/20 transition-all duration-300">
+				<span class="text-primary group-hover:text-primary/80">{ link.name }</span>
+			</a>
+		))}
+	</div>
+</section>

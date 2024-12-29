@@ -1,0 +1,22 @@
+---
+
+const companyInfo = [
+	{
+		name: 'KvK',
+		value: '12345678',
+	},
+	{
+		name: 'BTW',
+		value: 'NL123456789B01',
+	}
+];
+
+---
+
+<footer class="border-t border-border pt-8">
+	<div class="flex justify-center space-x-8 text-sm text-muted-foreground">
+		{companyInfo.map((info) => (
+			<p class="px-4 py-2 rounded-md bg-card">{ info.name }: { info.value }</p>
+		))}
+	</div>
+</footer>

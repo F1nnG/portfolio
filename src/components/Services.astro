@@ -1,0 +1,38 @@
+---
+
+import { siLaravel } from 'simple-icons';
+
+const services = [
+	{
+		name: 'Laravel Applications',
+		description: 'Custom web applications built with Laravel, a powerful PHP framework. Perfect for businesses needing secure, scalable, and feature-rich solutions like customer portals, booking systems, or content management systems.',
+		icon: siLaravel,
+		color: '#FF2D20',
+	},
+];
+
+---
+
+<section id="services" class="py-20">
+	<h2 class="text-3xl font-semibold mb-12 text-center">How I Can Help You</h2>
+	<div class="grid gap-8 max-w-2xl mx-auto">
+		{services.map((service) => (
+		<div class="group p-8 rounded-2xl bg-gradient-to-r from-background to-background hover:from-primary/5 hover:to-secondary/5 transition-all duration-500 flex flex-col items-center text-center" data-aos="fade-up">
+			<div class="w-16 h-16 rounded-xl bg-gradient-to-tr from-primary/10 to-secondary/10 flex items-center justify-center flex-shrink-0 transition-transform duration-500 group-hover:scale-110 mb-6">
+			<svg
+				class="w-8 h-8 transition-transform duration-500 group-hover:rotate-12"
+				viewBox="0 0 24 24"
+				fill="currentColor"
+				style={`color: ${ service.color }`}
+			>
+				<path d={ service.icon.path } />
+			</svg>
+			</div>
+			<div class="transform transition-all duration-500 group-hover:translate-y-1">
+			<h3 class="text-2xl font-medium mb-4">{ service.name }</h3>
+			<p class="text-muted-foreground leading-relaxed">{ service.description }</p>
+			</div>
+		</div>
+		))}
+	</div>
+</section>

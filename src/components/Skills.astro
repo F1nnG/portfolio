@@ -1,0 +1,89 @@
+---
+
+import {
+	siTailwindcss,
+	siLaravel,
+	siJavascript,
+	siReact,
+	siPostgresql,
+	siC,
+} from 'simple-icons';
+
+const skills = [
+	{
+		name: 'Tailwind CSS',
+		icon: siTailwindcss,
+		color: '#06B6D4',
+		level: 'Advanced',
+	},
+	{
+		name: 'Laravel',
+		icon: siLaravel,
+		color: '#FF2D20',
+		level: 'Advanced',
+	},
+	{
+		name: 'JavaScript',
+		icon: siJavascript,
+		color: '#F7DF1E',
+		level: 'Advanced',
+	},
+	{
+		name: 'React',
+		icon: siReact,
+		color: '#61DAFB',
+		level: 'Intermediate',
+	},
+	{
+		name: 'SQL',
+		icon: siPostgresql,
+		color: '#4169E1',
+		level: 'Advanced',
+	},
+	{
+		name: 'C',
+		icon: siC,
+		color: '#555555',
+		level: 'Intermediate',
+	}
+];
+
+---
+
+<section id="skills" class="py-20">
+	<h2 class="text-3xl font-semibold mb-12 text-center">Technical Skills</h2>
+	<div class="grid grid-cols-2 lg:grid-cols-3 gap-8">
+		{skills.map((skill) => (
+		<div class="group relative flex flex-col items-center">
+			<div class="w-20 h-20 relative">
+			<!-- Background circle with gradient -->
+			<div class="absolute inset-0 bg-gradient-to-tr from-background to-background rounded-full group-hover:from-primary/20 group-hover:to-secondary/20 transition-all duration-500"></div>
+			<!-- Rotating border -->
+			<div class="absolute inset-0 rounded-full bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-100 animate-spin-slow [animation-duration:3s]"></div>
+			<!-- Icon container -->
+			<div class="absolute inset-0.5 rounded-full bg-background flex items-center justify-center p-4">
+				<svg
+				class="w-full h-full transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3"
+				viewBox="0 0 24 24"
+				fill="currentColor"
+				style={`color: ${ skill.color }`}
+				>
+				<path d={ skill.icon.path } />
+				</svg>
+			</div>
+			</div>
+
+			<!-- Skill name with animated underline -->
+			<div class="mt-4 text-center">
+			<h3 class="font-medium text-lg relative inline-block">
+				{ skill.name }
+				<div class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300"></div>
+			</h3>
+			<p class="text-sm text-muted-foreground mt-1 opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+				{ skill.level }
+			</p>
+			</div>
+		</div>
+		))}
+	</div>
+</section>
