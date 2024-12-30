@@ -12,7 +12,6 @@ export default {
 				background: '#ffffff', // White for light mode
 				card: '#f1f5f9',      // Slate-100
 				border: '#e2e8f0',    // Slate-200
-				'muted-foreground': '#64748b', // Slate-500
 			},
 		},
 	},
